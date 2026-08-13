@@ -34,7 +34,7 @@ function getLang() {
 // =====================================================
 
 const productData = localStorage.getItem("currentWatch");
-
+console.log(">>> nav: ",productData)
 if (!productData) {
     const nameEl = document.getElementById("name");
     if (nameEl) nameEl.innerText = "Không tìm thấy sản phẩm";
