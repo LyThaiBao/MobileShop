@@ -1,0 +1,74 @@
+
+/* sytle check box hang */
+.brand-check{
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 4px;
+  cursor:pointer;
+  user-select:none;
+  font-size:0.92rem;
+}
+.brand-check input{
+  position:absolute;
+  opacity:0;
+  cursor:pointer;
+}
+.checkmark{
+  width:18px; height:18px;
+  border:1.5px solid #c9c9c9;
+  border-radius:5px;
+  flex-shrink:0;
+  transition:all .15s ease;
+  position:relative;
+}
+.brand-check input:checked ~ .checkmark{
+  background:#fff;
+  border-color:#25eb99;
+}
+.brand-check input:checked ~ .checkmark::after{
+  content:"";
+  position:absolute;
+  left:5px; top:1px;
+  width:5px; height:10px;
+  border:solid #25eb99;
+  border-width:0 3px 3px 0;
+  transform:rotate(45deg);
+}
+
+/* style input radio gia */
+.brand-check{
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 4px;
+  cursor:pointer;
+  user-select:none;
+  font-size:0.92rem;
+}
+.brand-check input{
+  position:absolute;
+  opacity:0;
+  cursor:pointer;
+}
+.radiomark{
+  width:18px; height:18px;
+  border:1.5px solid #c9c9c9;
+  border-radius:50%; /* tròn thay vì bo góc */
+  flex-shrink:0;
+  transition:all .15s ease;
+  position:relative;
+}
+.brand-check input:checked ~ .radiomark{
+  border-color:#25eb99;
+}
+.brand-check input:checked ~ .radiomark::after{
+  content:"";
+  position:absolute;
+  top:3px; left:3px;
+  width:10px; height:10px;
+  border-radius:50%;
+  background:#25eb99;
+}
