@@ -507,8 +507,14 @@ function renderProductDetail() {
             } else {
 
                 if (toastHeader) {
+                    toastHeader.innerText = "Thông báo"
                     toastHeader.className =
                         "toast-header bg-info";
+                }
+
+                 if (toastBody) {
+                    toastBody.innerText =
+                        "Thêm thành công";
                 }
 
                 if (from) {
@@ -548,7 +554,11 @@ function renderProductDetail() {
                 const toastInstance =
                     bootstrap.Toast.getOrCreateInstance(toast);
 
-                toastInstance.show();
+                    toastInstance.show();
+               setTimeout(()=>{
+                   toastInstance.hide()
+               },2000)
+
 
             }
 
