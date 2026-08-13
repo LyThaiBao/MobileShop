@@ -19,21 +19,36 @@
 <body>
 
     <div class="wrapper">
-        <!-- HEADER VIẾT CỨNG -->
-        <header id="header" class="d-flex justify-content-between align-items-center bg-primary-app px-2 py-2">
-            <div class="header-logo">
-                <a href="../../index.html" class="text-white text-decoration-none fw-bold fs-4">PhoneStore</a>
+            <!-- HEADER VIẾT CỨNG -->
+     <header id="header" class="d-flex justify-content-between align-items-center bg-primary-app px-2 py-2">
+                    <div id="header_hamberger" class="d-md-none cursor-pointer text-navy fs-sm"><i class="bi bi-list"></i></div>
+                    <a href="#" id="header_logo" ><img src="../../public/imgs/mobile_shop_logo_full.png" class="" alt="" ></a>
+                    <nav id="navbar" class="d-flex z-100 py-1 flex-column position-fixed start-0 bottom-0  bg-primary-app bg-md-transparent fw-semibold
+                    top-0 end-50 transition translate-full-x  px-2  position-md-relative translateX-md-0 flex-md-grow-1">
+            <div class="d-flex d-md-none justify-content-between align-items-center">
+                <a href=""  id="nav_logo">
+                <img src="./p" alt="">
+                </a>
+                <span class="nav_close cursor-pointer fs-sm text-danger"><i class="bi bi-x"></i></span>
             </div>
-            <nav class="header-nav d-none d-md-flex gap-3">
-                <a href="../../index.html" class="text-white text-decoration-none" data-lang="nav.home">Trang Chủ</a>
-                <a href="../SanPham/sanpham.html" class="text-white text-decoration-none" data-lang="nav.product">Sản Phẩm</a>
-                <a href="../GioiThieu/gioithieu.html" class="text-white text-decoration-none" data-lang="nav.about">Giới Thiệu</a>
-                <a href="./lienhe.html" class="text-white text-decoration-none" data-lang="nav.contact">Liên Hệ</a>
+                <div class="navbar_swpage d-flex flex-column bold mt-2 text-navy pt-2 gap-3 flex-md-row align-items-center pt-md-0 mt-md-0 fs-md  justify-content-between justify-content-md-center gap-md-5">
+                    <a href="../../index.html" class="d-md-block"><i class="bi px-1 bi-house d-md-none"></i><span  data-lang="nav.home" class="fw-bold"></span></a>
+                    <a href="../../src/SanPham/sanpham.html" class="d-flex gap-2" > <i class="bi bi-phone d-md-none"></i><span data-lang="nav.product" class="fw-bold">San Pham</span></a>
+                    <a href="../../src/Gioithieu/gioithieu.html" class="d-flex gap-2"><i class="bi bi-info-circle d-md-none"></i> <span data-lang="nav.about" class="fw-bold">Giới Thiệu</span></a>
+                    <a href="../../src/Lienhe/lienhe.html" class="d-flex gap-2 pr-3"><i class="bi bi-telephone d-md-none"></i> <span data-lang="nav.contact" class="fw-bold">Liên Hệ</span></a>
+                </div>
             </nav>
-            <div class="header-actions">
-                <a href="../DangNhap/dangnhap.html" class="btn btn-light btn-sm" data-lang="action.login">Đăng Nhập</a>
+            <div class="header_action d-flex align-items-center gap-3 ms-5 ">
+                <a href="../../src/giohang/giohang.html" class="header_action-cart fs-md "><i class="bi bi-cart4"></i></a>
+                <a class="fs-md" id="username"></a>
+                <a href="../../src/Dangnhap.html" class="btn btn-danger" data-lang="nav.logout"></a>
+                <div id="lang" class="d-flex gap-3">
+                    <img src="../../public/imgs/country/vn.png" alt="vn" tabindex="-1" id="btn_vn" role="button">
+                    <img src="../../public/imgs/country/us.png" alt="us" tabindex="-1" id="btn_us" role="button">
+                </div>
             </div>
-        </header>
+            <div id="overlay-placeholder" class="z-99 d-md-none"></div>
+     </header>
         
         <!-- NỘI DUNG CHÍNH (MAIN) -->
         <main class="container">
@@ -218,7 +233,7 @@
     </div>
 
     <!-- SCRIPT TỪ THƯ MỤC ROOT VÀ CÙNG THƯ MỤC -->
-    <script src="../../utils/lang.js"></script>
+    <script src="../../public/js/lang.js"></script>
     <script src="./lienhe.js"></script>
 </body>
 </html>
