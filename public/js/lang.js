@@ -68,13 +68,13 @@ window.translations = {
             about: { genuine: "Hàng chính hãng", shipping: "Giao toàn quốc", return: "Đổi trả 7 ngày", support: "Hỗ trợ 24/7" }
         },
         contact: {
-            info: { title: "Liên hệ với chúng tôi", desc: "Có thắc mắc về sản phẩm...", addressLabel: "ĐỊA CHỈ", address: "123 Đường ABC...", hotlineLabel: "HOTLINE", hotline: "1900 6868", emailLabel: "EMAIL", email: "hotro@phonestore.vn", hoursLabel: "GIỜ LÀM VIỆC", hours: "8:00 – 21:00...", mapPlaceholder: "Bản đồ cửa hàng" },
+            info: { title: "Liên hệ với chúng tôi", desc: "Có thắc mắc về sản phẩm, đơn hàng hay bảo hành? Gửi thông tin cho chúng tôi hoặc ghé trực tiếp cửa hàng gần nhất.", addressLabel: "ĐỊA CHỈ", address: "123 Đường ABC, Quận 1, TP. Cần Thơ", hotlineLabel: "HOTLINE", hotline: "1900 6868", emailLabel: "EMAIL", email: "hotro@phonestore.vn", hoursLabel: "GIỜ LÀM VIỆC", hours: "8:00 – 21:00, tất cả các ngày trong tuần", mapPlaceholder: "Bản đồ cửa hàng" },
             form: { title: "Gửi tin nhắn cho chúng tôi", fullNameLabel: "HỌ VÀ TÊN", fullNamePlaceholder: "Nhập họ và tên", phoneLabel: "SỐ ĐIỆN THOẠI", phonePlaceholder: "Nhập số điện thoại", emailLabel: "EMAIL", emailPlaceholder: "Nhập email", messageLabel: "NỘI DUNG", messagePlaceholder: "Bạn cần hỗ trợ gì?", submit: "Gửi liên hệ" }
         },
         intro: {
-            banner: { subTitle: "TỪ 2016 - HƠN 128.000 KHÁCH HÀNG TIN DÙNG", title: "Chúng tôi mang điện thoại chính hãng...", desc: "Bắt đầu từ một cửa hàng nhỏ..." },
+            banner: { subTitle: "TỪ 2016 - HƠN 128.000 KHÁCH HÀNG TIN DÙNG", title: "Chúng tôi mang điện thoại chính hãng đến gần với mọi người", desc: "Bắt đầu từ một cửa hàng nhỏ, đến nay chúng tôi đã phục vụ khách hàng tại 40+ tỉnh thành, với cam kết hàng chính hãng, giá minh bạch và hậu mãi tận tâm." },
             stats: { yearLabel: "Năm thành lập", customerLabel: "Khách hàng", storeLabel: "Cửa hàng toàn quốc", ratingLabel: "Đánh giá trung bình" },
-            values: { title: "Giá Trị Cốt Lõi", genuine: { title: "Chính hãng 100%", desc: "Tất cả sản phẩm đều có tem..." }, transparent: { title: "Minh bạch giá", desc: "Giá niêm yết rõ ràng..." }, support: { title: "Hậu mãi tận tâm", desc: "Đội ngũ hỗ trợ 24/7..." } },
+            values: { title: "Giá Trị Cốt Lõi", genuine: { title: "Chính hãng 100%", desc: "Tất cả sản phẩm đều có tem chính hãng, bảo hành đầy đủ từ nhà sản xuất." }, transparent: { title: "Minh bạch giá", desc: "Giá niêm yết rõ ràng, không phát sinh chi phí ẩn khi thanh toán." }, support: { title: "Hậu mãi tận tâm", desc: "Đội ngũ hỗ trợ 24/7, sẵn sàng đồng hành cùng khách hàng sau khi mua." } },
             cta: { title: "Bạn cần tư vấn thêm?", desc: "Đội ngũ luôn sẵn sàng lắng nghe.", button: "Liên hệ ngay" }
         },
         detail: {
