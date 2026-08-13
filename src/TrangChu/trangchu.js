@@ -339,7 +339,7 @@ function renderProduct(productsList, addToCartCallback, rootId) {
 
        const productCard = document.createElement('section');
         productCard.addEventListener("click", (e) => {
-        localStorage.setItem('currentWatch', JSON.stringify(item));
+        localStorage.setItem('currentWatch', JSON.stringify(item.id));
            window.location.href = "src/chitiet/chitiet.html";
     });
         productCard.classList.add('product_card', 'd-flex', 'flex-column', 'h-100', 'justify-content-between', 'align-items-center');

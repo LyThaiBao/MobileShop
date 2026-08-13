@@ -27,6 +27,13 @@ function closeOverlay(menu,overlay){
     })
 }
 
+// Kiểm tra đăng nhập
+function checkLogin() {
+    const username = JSON.parse(localStorage.getItem("mobileShopCurrentUser"));
+    return username ? username.fullName : false;
+}
+
+
 function showUsername(){
     const username = document.getElementById("username");
     const usr = checkLogin();

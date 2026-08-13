@@ -364,7 +364,7 @@ function renderProduct(products, addToCart, root_id){
         // ---- productCard ----
         const productCard = document.createElement('section');
         productCard.addEventListener("click", () => {
-            localStorage.setItem('currentWatch', JSON.stringify(item));
+            localStorage.setItem('currentWatch', JSON.stringify(item.id));
             // Đã sửa đường dẫn trỏ về trang chitiet từ thư mục SanPham
              window.location.href = "../../src/chitiet/chitiet.html";
         });
