@@ -1,0 +1,297 @@
+/* Variable css */
+
+:root {
+  --gradient-primary: linear-gradient(135deg, #25eb99 0%, #8aa7e0 100%);
+  --gradient-dark: linear-gradient(135deg, #1E3A8A 0%, #312E81 100%);
+  --gradient-glow: linear-gradient(135deg, #3B82F6 0%, #6366F1 50%, #8B5CF6 100%);
+  --text-primary:#2FE3A6;
+  --text-on-gradient: #16213a;
+}
+
+/* Background Color */
+
+.bg-primary-app{
+    background: var(--gradient-primary);
+    /* background-color: #30e3a6; */
+}
+
+/* Font -family */
+@font-face {
+    font-family: 'Be Vietnam Pro';
+    src: url('../../lib/Be_Vietnam_Pro/BeVietnamPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Be Vietnam Pro';
+    src: url('../../lib/Be_Vietnam_Pro/BeVietnamPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Be Vietnam Pro';
+    src: url('../../lib/Be_Vietnam_Pro/BeVietnamPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+/* ---Generic--- */
+body {
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+
+a{
+    text-decoration: none !important;
+    color: inherit;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+#main{
+    margin-top: 60px;
+}
+
+footer{
+  margin: 5px 0;
+  background: var(--gradient-primary);
+}
+#bottom-placeholder{
+    margin-top: 60px;
+}
+/* Tranfrom */
+.translate-full-x { 
+    transform: translateX(-100vw);
+ }
+
+.translate-0-x{
+    transform: translateX(0);
+}
+
+/* Cursor */
+.cursor-pointer{
+    cursor: pointer;
+}
+
+/* -----wrapper-------- */
+.wrapper{
+    /* padding-left: 12px;
+    padding-right: 12px; */
+    /* padding-top: 4px; */
+}
+
+/* Transition */
+.transition{
+    transition: all 0.3s ease-in-out;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(13, 20, 27, 0.6);
+}
+
+/* Z-index */
+.z-100{
+    z-index: 100;
+}
+
+.z-99{
+    z-index: 99;
+}
+/* --------------Font size mobile ----------*/
+.fs-sm{
+    font-size: 2rem;
+}
+
+.fs-esm{
+    font-size: 0.8rem;
+  }
+
+/* ---Text Color--- */
+.text-primary-app{
+    color: var(--text-primary);
+}
+.text-gray{
+    color: #79787c;
+}
+  /* text-color */
+  .text-blue{
+    color: blue !important;
+  }
+  .text-insta{
+    color: #E1306C;   
+  }
+  .text-tik{
+    color: #5c0718; 
+  }
+
+  .text-navy{
+    color: var(--text-on-gradient) !important;
+  }
+
+/* Font weight */
+.bold{
+    font-weight: 500;
+}
+.ex-bold{
+    font-weight: 700;
+}
+
+/* ---Position---- */
+.top-80{
+    top: 80%;
+}
+
+
+/* Padding */
+.py-6{
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+/* Margin */
+.ms-40{
+    margin-left: 40%;
+}
+
+
+/* Sizing */
+.h-500{
+    height: 150px;
+}
+
+/*  */
+ /* bg-color */
+  .bg-md-transparent{
+    background-color: unset !important;
+  }
+
+  .bg-gray{
+    background-color: rgba(118, 116, 116, 0.83) !important;
+  }
+
+  .bg-green{
+    background-color: rgb(109, 219, 164) !important;
+  }
+
+
+  /*Flex  */
+  .gap-15{
+    gap: 60px;
+  }
+
+
+
+/* -------Product------  */
+.product_card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(37, 235, 153, 0.12);
+  border: 1px solid rgba(37, 235, 153, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product_card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 58px rgba(8, 60, 142, 0.2);
+  border-color: transparent;
+}
+.product_card:hover{
+  transform: scale(1.03);
+  box-shadow: 0 8px 28px rgba(59, 130, 246, 0.2);
+  border-color: transparent;
+}
+
+.product_card + .product_card{
+  margin-top: 10px;
+}
+
+.product-title{
+  min-height: 60px;
+}
+.buy_btn{
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  background: #43cb9e;
+}
+/* -------Responsive------------- */
+
+@media (min-width:650px){
+    .fs-mid{
+    font-size: 1.0rem;
+    }
+
+    .flex-mid-col{
+        flex-direction: column;
+    }
+    .d-mid-none{
+        display: none !important;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+  .position-md-static {
+    position: static !important;
+  }
+
+  .position-md-fixed {
+    position: fixed !important;
+  }
+
+  .position-md-relative{
+        position: relative !important;
+    }
+
+    /* translate */
+  .translateX-md-0{
+    transform: translateX(0) !important;
+  }
+
+  .w-md-100{
+    width: 100% !important;
+  }
+
+ 
+  /* -----Wrapper */
+  .wrapper{
+    /* padding: 10px 15px; */
+
+  }
+  /* Font size > mobile */
+  .fs-md{
+    font-size: 1.1rem;
+  }
+    #bottom-placeholder{
+    margin: 0;
+  }
+  
+}
+
+
+
+@media (min-width: 992px) {
+  .position-lg-fixed {
+    position: fixed !important;
+  }
+
+}
