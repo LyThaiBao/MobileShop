@@ -13,11 +13,6 @@ body {
     max-width: 1475px;
     padding: 50px 40px 70px;
 }
-
-/* =========================
-   SẢN PHẨM
-========================= */
-
 .cart-item {
     min-height: 140px;
     display: flex;

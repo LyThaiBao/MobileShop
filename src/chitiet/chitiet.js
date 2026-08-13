@@ -292,7 +292,6 @@ function getCurrentLang() {
     }
 }
 
-// Hàm hiển thị thông báo Toast linh hoạt
 function showNotification(message, isError = false) {
     const toast = document.getElementById("cartToast");
     const toastBody = document.getElementById("toastBody");
@@ -309,7 +308,6 @@ function showNotification(message, isError = false) {
 
     if (toast && typeof bootstrap !== "undefined") {
         try {
-            // Tương thích cả Bootstrap 4 & 5
             if (bootstrap.Toast.getOrCreateInstance) {
                 bootstrap.Toast.getOrCreateInstance(toast).show();
             } else {
@@ -322,11 +320,6 @@ function showNotification(message, isError = false) {
         alert(message);
     }
 }
-
-// =====================================================
-// LOGIC HIỂN THỊ CHI TIẾT SẢN PHẨM
-// =====================================================
-
 function renderProductDetail() {
     const productData = localStorage.getItem("currentWatch");
 
@@ -346,28 +339,22 @@ function renderProductDetail() {
             product = products.find(item => item.id == productData);
         }
     }
-
     if (!product) return;
-
     const lang = getCurrentLang();
-
-    // 1. TÊN SẢN PHẨM
+    //  TÊN SẢN PHẨM
     const name = document.getElementById("name");
     if (name) {
         name.innerText = product.name?.[lang] || product.name?.vi || product.name?.us || "Không có tên";
     }
-
-    // 2. MÔ TẢ
+    //  MÔ TẢ
     const description = document.getElementById("description");
     if (description) {
         description.innerText = product.desc?.[lang] || product.desc?.vi || product.desc?.us || "";
     }
-
-    // 3. ẢNH SẢN PHẨM
+    //  ẢNH SẢN PHẨM
     const mainImage = document.getElementById("mainImage");
     const thumbList = document.getElementById("thumbList");
     const images = [];
-
     if (product.colors) {
         product.colors.forEach(color => {
             if (color.imgs) {
@@ -382,7 +369,6 @@ function renderProductDetail() {
         mainImage.src = images[0];
         mainImage.alt = product.name?.[lang] || "Sản phẩm";
     }
-
     if (thumbList) {
         thumbList.innerHTML = "";
         images.forEach((img, index) => {
@@ -390,69 +376,55 @@ function renderProductDetail() {
             thumb.src = img;
             thumb.className = "thumb";
             if (index === 0) thumb.classList.add("active");
-
             thumb.addEventListener("click", () => {
                 if (mainImage) mainImage.src = img;
                 document.querySelectorAll(".thumb").forEach(item => item.classList.remove("active"));
                 thumb.classList.add("active");
             });
-
             thumbList.appendChild(thumb);
         });
     }
-
-    // 4. DUNG LƯỢNG
+    //  DUNG LƯỢNG
     const storage = document.getElementById("storage");
     let selectedVariant = product.variants?.[0];
 
     function renderStorage() {
         if (!storage) return;
         storage.innerHTML = "";
-
         if (!product.variants?.length) {
             storage.innerText = "Không có";
             return;
         }
-
         product.variants.forEach((variant, index) => {
             const button = document.createElement("button");
             button.type = "button";
             button.innerText = variant.storage;
-
             if (index === 0) {
                 button.classList.add("active");
                 selectedVariant = variant;
             }
-
             button.addEventListener("click", () => {
                 document.querySelectorAll("#storage button").forEach(item => item.classList.remove("active"));
                 button.classList.add("active");
                 selectedVariant = variant;
                 updatePrice();
             });
-
             storage.appendChild(button);
         });
     }
-
-    // 5. GIÁ CẢ
+    //  GIÁ CẢ
     const newPrice = document.getElementById("newPrice");
     const oldPrice = document.getElementById("oldPrice");
     const discount = document.getElementById("discount");
-
     function formatPrice(price) {
         return Number(price).toLocaleString("vi-VN") + "đ";
     }
-
     function updatePrice() {
         if (!selectedVariant) return;
-
         const newValue = Number(selectedVariant.newPrice || product.price || 0);
         const oldValue = Number(selectedVariant.oldPrice || 0);
-
         if (newPrice) newPrice.innerText = formatPrice(newValue);
         if (oldPrice) oldPrice.innerText = oldValue > newValue ? formatPrice(oldValue) : "";
-
         if (discount) {
             if (oldValue > newValue) {
                 const percent = Math.round((1 - newValue / oldValue) * 100);
@@ -462,121 +434,75 @@ function renderProductDetail() {
             }
         }
     }
-
     renderStorage();
     updatePrice();
-
    const addCart =
         document.getElementById("addCart");
-
-
     if (addCart) {
-
         addCart.addEventListener("click", () => {
-
             const toast =
                 document.getElementById("cartToast");
-
             const toastBody =
                 document.getElementById("toastBody");
-
             const toastHeader =
                 document.getElementById("toastHeader");
-
             const from =
                 document.getElementById("from");
-
-
             if (!checkLogin()) {
-
                 if (toastHeader) {
                     toastHeader.className =
                         "toast-header bg-danger text-white";
                 }
-
                 if (from) {
                     from.innerText =
                         "Thông báo";
                 }
-
                 if (toastBody) {
                     toastBody.innerText =
                         "Vui lòng đăng nhập";
                 }
-
             } else {
-
                 if (toastHeader) {
                     toastHeader.innerText = "Thông báo"
                     toastHeader.className =
                         "toast-header bg-info";
                 }
-
                  if (toastBody) {
                     toastBody.innerText =
                         "Thêm thành công";
                 }
-
                 if (from) {
                     from.setAttribute('data-lang', 'detail.toast.cartTitle');
                 }
-
-
                 // Tạo sản phẩm lưu vào giỏ
-
                 const cartProduct = {
-
                     ...product,
-
                     selectedStorage:
                         selectedVariant?.storage,
-
                     price:
                         selectedVariant?.newPrice,
-
                     quantity: 1
-
                 };
-
-
                 saveProductToCart(cartProduct);
-
-
                 if (toastBody) {
                     toastBody.setAttribute('data-lang', 'detail.toast.msg');
                 }
-
             }
-
             // Chỉ show toast MỘT LẦN duy nhất ở đây, dùng chung cho cả 2 nhánh
             if (toast) {
-
                 const toastInstance =
                     bootstrap.Toast.getOrCreateInstance(toast);
-
                     toastInstance.show();
                setTimeout(()=>{
                    toastInstance.hide()
                },2000)
-
-
             }
-
         });
-
     }
-
-
-    // =================================================
     // MUA NGAY
-    // =================================================
-
     const buyNow = document.getElementById("buyNow");
-
     if (buyNow) {
-
         buyNow.addEventListener("click", () => {
-
             const toast =
                 document.getElementById("cartToast");
 
@@ -608,43 +534,34 @@ function renderProductDetail() {
                         bootstrap.Toast.getOrCreateInstance(toast);
                     toastInstance.show();
                 }
-
                 return;
-
             }
             else {
-
                 const cartProduct = {
-
                     ...product,
-
                     selectedStorage:
                         selectedVariant?.storage,
-
                     price:
                         selectedVariant?.newPrice,
-
                     quantity: 1
-
                 };
-
-
                 saveProductToCart(cartProduct);
-
-
                 if (toastHeader) {
                     toastHeader.className =
                         "toast-header bg-info";
                 }
-
                 if (from) {
                     from.setAttribute('data-lang', 'detail.toast.cartTitle');
                 }
-
                 if (toastBody) {
                     toastBody.setAttribute('data-lang', 'detail.toast.msg');
                 }
-
+                // Show toast trước khi chuyển trang
+                if (toast) {
+                    const toastInstance =
+                        bootstrap.Toast.getOrCreateInstance(toast);
+                    toastInstance.show();
+                }
 
              
                     window.location.href =
@@ -658,11 +575,9 @@ function renderProductDetail() {
     }
 
 }
-
 // KHỞI TẠO ĐỔ DỮ LIỆU VÀ LẮNG NGHE SỰ KIỆN ĐỔI NGÔN NGỮ
 document.addEventListener("DOMContentLoaded", () => {
     renderProductDetail();
-
     const btnVn = document.getElementById('btn_vn');
     const btnUs = document.getElementById('btn_us');
 
@@ -673,23 +588,18 @@ document.addEventListener("DOMContentLoaded", () => {
         btnUs.addEventListener('click', () => setTimeout(renderProductDetail, 50));
     }
 });
-
 if (typeof loadLang === "function") {
     loadLang();
 }
-
 // BỌC AN TOÀN CHO HÀM CHECK EMAIL
 function checkEmail() {
     const modalEl = document.getElementById('notifyModal');
     const boxEmail = document.getElementById("box_email");
     const btn = document.getElementById("trigger");
     const error = document.getElementById("email_error");
-
     if (!modalEl || !btn || !boxEmail) return;
-
     const modal = new bootstrap.Modal(modalEl);
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
     btn.addEventListener('click', () => {
         if (!boxEmail.value.trim()) {
             if (error) error.innerText = "Không được để email trống";
@@ -699,11 +609,9 @@ function checkEmail() {
             if (error) error.innerText = "Email không hợp lệ!";
             return;
         }
-
         modal.show();
         boxEmail.value = "";
         if (error) error.innerText = "";
     });
 }
-
 checkEmail();
