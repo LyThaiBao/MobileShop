@@ -43,7 +43,7 @@ function showUsername(){
     }
     else{
         username.setAttribute('data-lang','action.login');
-        username.setAttribute('href','./src/DangNhap/dangnhap.html')
+        username.setAttribute('href','../DangNhap/dangnhap.html')
     }
 }
 

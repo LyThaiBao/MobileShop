@@ -102,4 +102,16 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
 }
+function showUsername(){
+    const username = document.getElementById("username");
+    const usr = checkLogin();
+    username.innerText = usr ? usr : "Đăng Nhập"
+    if(usr){
+         username.innerText = usr;
+    }
+    else{
+        username.setAttribute('data-lang','action.login');
+        username.setAttribute('href','../DangNhap/dangnhap.html')
+    }
+}
 checkEmail();

@@ -106,7 +106,7 @@
       <div id="product" class="px-3 py-4">
         <div class="product_intro d-flex align-items-center justify-content-between mb-3">
           <span class="ex-bold" data-lang="home.product.title">Sản phẩm nổi bậc</span>
-          <span tabindex="-1" role="button" class="text-success ex-bold" onclick="{console.log(window.location.pathname = '/src/SanPham/sanpham.html')}">
+          <span tabindex="-1" role="button" class="text-success ex-bold" onclick="{window.location.href = './src/SanPham/sanpham.html'}">
             <span data-lang="home.product.viewAll">Xem tất cả</span><i class="bi bi-arrow-right"></i>
           </span>
         </div>
@@ -153,7 +153,6 @@
         </div>
       </div>
     </main>
-
     <footer id="footer" class="px-3">
       <!-- Box Info -->
       <div class="modal fade" id="notifyModal" tabindex="-1" aria-labelledby="exampleModalLabel">
@@ -249,6 +248,6 @@
 
 <!-- NHÚNG FILE SCRIPT DẠNG THƯỜNG (KHÔNG DÙNG TYPE="MODULE") -->
 <script src="./public/js/lang.js"></script>
-<script src="./src/TrangChu/trangchu.js"></script>
 <script src="./public/js/root.js"></script>
+<script src="./src/TrangChu/trangchu.js"></script>
 </html>

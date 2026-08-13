@@ -413,7 +413,34 @@ function renderProduct(products, addToCart, root_id){
     row.append(fragment);
     containProduct.append(row);
 }
+
+// Check email footer
+ function  checkEmail(){
+    const modal = new bootstrap.Modal(document.getElementById('notifyModal'));
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const boxEmail = document.getElementById("box_email");
+    const btn = document.getElementById("trigger");
+    const error = document.getElementById("email_error");
+    btn.addEventListener('click',()=>{
+       if(!boxEmail.value.trim()){
+            error.innerText = "Không được để email trống";
+            return;
+       }
+       if(!regex.test(boxEmail.value.trim())){
+        error.innerText = "Email không hợp lệ!"
+        return;
+       }
+   
+           modal.show();
+           boxEmail.value = error.innerText = ""; 
+    })
+
+}
+
+checkEmail();
+
 document.addEventListener("DOMContentLoaded", () => {
     // Gọi hàm filter để khởi tạo bộ lọc và hiển thị danh sách sản phẩm ban đầu
     filter();
 });
+
