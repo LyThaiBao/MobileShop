@@ -1,0 +1,333 @@
+/* =====================================================
+   PRODUCT DETAIL PAGE
+===================================================== */
+body {
+    margin: 0;
+    background: #fff;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* =====================================================
+   PRODUCT PAGE
+===================================================== */
+.product-page {
+    width: 100%;
+    max-width: 1400px;
+    margin: 35px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding-top: 40px;
+}
+/* =====================================================
+   GALLERY
+===================================================== */
+.product-gallery {
+    min-width: 0;
+}
+/* ẢNH LỚN */
+.product-gallery .main-image {
+    width: 100%;
+    height: 500px;
+    background: #f8f9fa;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.product-gallery .main-image img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+/* =====================================================
+   ẢNH NHỎ
+===================================================== */
+.thumb-list {
+    margin-top: 18px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.thumb-list .thumb {
+    width: 80px;
+    height: 80px;
+    padding: 8px;
+    background: #f8f9fa;
+    border: 2px solid #e5e7eb;
+    border-radius: 15px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: 0.2s;
+}
+/* Hover ảnh */
+.thumb-list .thumb:hover {
+    border-color: #32e6b5;
+   transform: translateY(-2px);
+}
+/* Ảnh đang chọn */
+.thumb-list .thumb.active {
+    border-color: #32e6b5;
+    box-shadow:
+        0 0 0 2px rgba(50, 230, 181, 0.15);
+}
+/* =====================================================
+   PRODUCT INFO
+===================================================== */
+.product-info {
+    min-width: 0;
+}
+/* TÊN */
+.product-info h1 {
+    margin: 0;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+}
+/* =====================================================
+   RATING
+===================================================== */
+.rating {
+    margin-top: 18px;
+    color: #9ea9bb;
+    font-size: 20px;
+}
+/* =====================================================
+   PRICE
+===================================================== */
+.price {
+    margin: 35px 0;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+/* GIÁ MỚI */
+.new-price {
+    font-size: 55px;
+    font-weight: bold;
+    color: #32e6b5;
+    white-space: nowrap;
+}
+/* GIÁ CŨ */
+.old-price {
+    color: #7a8598;
+    text-decoration: line-through;
+    font-size: 25px;
+    white-space: nowrap;
+}
+/* GIẢM GIÁ */
+.discount {
+    background: #32e6b5;
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+/* =====================================================
+   STORAGE
+===================================================== */
+.product-info h3 {
+    margin: 35px 0 18px;
+    color: #8894aa;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+.storage {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+/* TẤT CẢ NÚT DUNG LƯỢNG */
+.storage button {
+    min-width: 120px;
+    min-height: 52px;
+    padding: 0 15px;
+    background: #1b222c;
+    color: #fff;
+    border: 2px solid #1b222c;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+/* Hover */
+.storage button:hover {
+    background: #28313d;
+    border-color: #28313d;
+}
+/* NÚT ĐANG CHỌN */
+.storage button.active {
+    background: #32e6b5;
+    color: #000;
+    border-color: #32e6b5;
+}
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+.product-info p {
+    margin: 35px 0 50px;
+    color: #a8b1c1;
+    line-height: 1.8;
+    font-size: 20px;
+    overflow-wrap: break-word;
+}
+/* =====================================================
+   BUTTONS
+===================================================== */
+.buttons {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+/* MUA NGAY + THÊM GIỎ */
+.buy-now,
+.add-cart {
+    flex: 1;
+    min-width: 0;
+    height: 64px;
+    padding: 0 20px;
+    border-radius: 40px;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #32e6b5;
+    color: #000;
+    border: none;
+}
+/* Hover */
+.buy-now:hover,
+.add-cart:hover {
+    background: #28c79b;
+    color: #000;
+    transform: translateY(-2px);
+}
+/* Click */
+.buy-now:active,
+.add-cart:active {
+    transform: scale(0.98);
+}
+/* =====================================================
+   RESPONSIVE - 1200px
+===================================================== */
+@media (max-width: 1200px) {
+    .product-page {
+        gap: 35px;
+    }
+    .product-info h1 {
+        font-size: 42px;
+    }
+    .new-price {
+        font-size: 45px;
+    }
+    .old-price {
+        font-size: 22px;
+    }
+}
+/* =====================================================
+   RESPONSIVE - 992px
+===================================================== */
+@media (max-width: 992px) {
+    .product-page {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .product-gallery .main-image {
+        height: 450px;
+    }
+    .product-info h1 {
+        font-size: 40px;
+    }
+    .new-price {
+        font-size: 42px;
+    }
+    .buttons {
+        flex-direction: column;
+    }
+    .buy-now,
+    .add-cart {
+        width: 100%;
+    }
+}
+/* =====================================================
+   RESPONSIVE - 576px
+===================================================== */
+@media (max-width: 576px) {
+    .product-page {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    /* Ảnh lớn */
+    .product-gallery .main-image {
+        height: 300px;
+        border-radius: 18px;
+    }
+    .product-gallery .main-image img {
+        width: 90%;
+        height: 90%;
+    }
+    /* Ảnh nhỏ */
+    .thumb-list {
+        gap: 10px;
+    }
+    .thumb-list .thumb {
+        width: 65px;
+        height: 65px;
+    }
+    /* Tên */
+    .product-info h1 {
+        font-size: 32px;
+    }
+    /* Rating */
+    .rating {
+        font-size: 17px;
+    }
+    /* Giá */
+    .price {
+        margin: 25px 0;
+        gap: 10px;
+    }
+    .new-price {
+        font-size: 35px;
+    }
+    .old-price {
+        font-size: 19px;
+    }
+    .discount {
+        padding: 6px 10px;
+    }
+    /* Dung lượng */
+    .product-info h3 {
+        font-size: 18px;
+    }
+    .storage {
+        gap: 10px;
+    }
+    .storage button {
+        min-width: 100px;
+        min-height: 48px;
+        font-size: 16px;
+    }
+    /* Mô tả */
+    .product-info p {
+        font-size: 17px;
+        margin: 25px 0 35px;
+    }
+    /* Buttons */
+    .buttons {
+        gap: 15px;
+    }
+    .buy-now,
+    .add-cart {
+        height: 58px;
+
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: #06100c;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cart-page {
+    max-width: 1475px;
+    padding: 50px 40px 70px;
+}
+
+/* =========================
+   SẢN PHẨM
+========================= */
+
+.cart-item {
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid #e1e5ea;
+}
+
+.product-img {
+    width: 94px;
+    height: 94px;
+    flex: 0 0 94px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8f9fa;
+    border: 1px solid #e5e7eb;
+    border-radius: 17px;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+}
+
+.product-info {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.product-info h2 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.price-red {
+    font-size: 21px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* =========================
+   SỐ LƯỢNG
+========================= */
+
+.quantity {
+    width: 108px;
+    height: 38px;
+    flex: 0 0 108px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #06100c;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.quantity button {
+    width: 34px;
+    height: 100%;
+    flex-shrink: 0;
+
+    border: 0;
+    background: transparent;
+    color: #06100c;
+
+    cursor: pointer;
+}
+
+.quantity button:hover {
+    color: #20c993;
+}
+
+.quantity span {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* =========================
+   NÚT XÓA
+========================= */
+
+.delete-btn {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    border: 0;
+    background: transparent;
+
+    color: #06100c;
+    cursor: pointer;
+}
+
+.delete-btn i {
+    display: block;
+    font-size: 21px;
+    line-height: 1;
+}
+
+.delete-btn:hover {
+    color: #ff5d5d;
+}
+
+.delete-btn:active {
+    transform: scale(0.9);
+}
+
+/* =========================
+   TÓM TẮT
+========================= */
+
+.order-summary {
+    background: #f5f5f5;
+}
+
+.pay-btn {
+    height: 54px;
+    background: #2cdda5 !important;
+    color: #06100c !important;
+    border: 0;
+}
+
+.pay-btn:hover {
+    background: #20c993 !important;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .cart-page {
+        padding: 25px 15px 40px;
+    }
+
+    .cart-item {
+        gap: 10px;
+    }
+
+    .product-img {
+        width: 70px;
+        height: 70px;
+        flex-basis: 70px;
+    }
+
+    .product-img img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .product-info h2 {
+        font-size: 14px;
+    }
+
+    .price-red {
+        font-size: 16px;
+    }
+
+    .quantity {
+        width: 85px;
+        height: 34px;
+        flex-basis: 85px;
+    }
+
+    .quantity button {
+        width: 27px;
+    }
+
+    .delete-btn {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+    }
+
+    .delete-btn i {
+        font-size: 18px;
+    }
+}
