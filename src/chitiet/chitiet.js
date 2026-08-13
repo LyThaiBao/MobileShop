@@ -466,54 +466,193 @@ function renderProductDetail() {
     renderStorage();
     updatePrice();
 
-    // 6. NÚT THÊM GIỎ HÀNG (SỬA LỖI HIỂN THỊ THÔNG BÁO)
-    const addCart = document.getElementById("addCart");
-    if (addCart) {
-        const newAddCart = addCart.cloneNode(true);
-        addCart.parentNode.replaceChild(newAddCart, addCart);
+   const addCart =
+        document.getElementById("addCart");
 
-        newAddCart.addEventListener("click", () => {
+
+    if (addCart) {
+
+        addCart.addEventListener("click", () => {
+
+            const toast =
+                document.getElementById("cartToast");
+
+            const toastBody =
+                document.getElementById("toastBody");
+
+            const toastHeader =
+                document.getElementById("toastHeader");
+
+            const from =
+                document.getElementById("from");
+
+
             if (!checkLogin()) {
-                showNotification("Vui lòng đăng nhập để thêm sản phẩm!", true);
+
+                if (toastHeader) {
+                    toastHeader.className =
+                        "toast-header bg-danger text-white";
+                }
+
+                if (from) {
+                    from.innerText =
+                        "Thông báo";
+                }
+
+                if (toastBody) {
+                    toastBody.innerText =
+                        "Vui lòng đăng nhập";
+                }
+
             } else {
+
+                if (toastHeader) {
+                    toastHeader.className =
+                        "toast-header bg-info";
+                }
+
+                if (from) {
+                    from.setAttribute('data-lang', 'detail.toast.cartTitle');
+                }
+
+
+                // Tạo sản phẩm lưu vào giỏ
+
                 const cartProduct = {
+
                     ...product,
-                    image: mainImage ? mainImage.src : (images[0] || ""),
-                    selectedStorage: selectedVariant?.storage || "",
-                    price: selectedVariant?.newPrice || product.price || 0,
+
+                    selectedStorage:
+                        selectedVariant?.storage,
+
+                    price:
+                        selectedVariant?.newPrice,
+
                     quantity: 1
+
                 };
 
+
                 saveProductToCart(cartProduct);
-                showNotification("Đã thêm sản phẩm vào giỏ hàng thành công!", false);
+
+
+                if (toastBody) {
+                    toastBody.setAttribute('data-lang', 'detail.toast.msg');
+                }
+
             }
+
+            // Chỉ show toast MỘT LẦN duy nhất ở đây, dùng chung cho cả 2 nhánh
+            if (toast) {
+
+                const toastInstance =
+                    bootstrap.Toast.getOrCreateInstance(toast);
+
+                toastInstance.show();
+
+            }
+
         });
+
     }
 
-    // 7. NÚT MUA NGAY
+
+    // =================================================
+    // MUA NGAY
+    // =================================================
+
     const buyNow = document.getElementById("buyNow");
-    if (buyNow) {
-        const newBuyNow = buyNow.cloneNode(true);
-        buyNow.parentNode.replaceChild(newBuyNow, buyNow);
 
-        newBuyNow.addEventListener("click", () => {
+    if (buyNow) {
+
+        buyNow.addEventListener("click", () => {
+
+            const toast =
+                document.getElementById("cartToast");
+
+            const toastBody =
+                document.getElementById("toastBody");
+
+            const toastHeader =
+                document.getElementById("toastHeader");
+
+            const from =
+                document.getElementById("from");
+
+
             if (!checkLogin()) {
-                showNotification("Vui lòng đăng nhập!", true);
+                if (toastHeader) {
+                    toastHeader.className =
+                        "toast-header bg-danger text-white";
+                }
+                if (from) {
+                    from.innerText =
+                        "Thông báo";
+                }
+                if (toastBody) {
+                    toastBody.innerText =
+                        "Vui lòng đăng nhập";
+                }
+                if (toast) {
+                    const toastInstance =
+                        bootstrap.Toast.getOrCreateInstance(toast);
+                    toastInstance.show();
+                }
+
                 return;
+
+            }
+            else {
+
+                const cartProduct = {
+
+                    ...product,
+
+                    selectedStorage:
+                        selectedVariant?.storage,
+
+                    price:
+                        selectedVariant?.newPrice,
+
+                    quantity: 1
+
+                };
+
+
+                saveProductToCart(cartProduct);
+
+
+                if (toastHeader) {
+                    toastHeader.className =
+                        "toast-header bg-info";
+                }
+
+                if (from) {
+                    from.setAttribute('data-lang', 'detail.toast.cartTitle');
+                }
+
+                if (toastBody) {
+                    toastBody.setAttribute('data-lang', 'detail.toast.msg');
+                }
+
+                // Show toast trước khi chuyển trang
+                if (toast) {
+                    const toastInstance =
+                        bootstrap.Toast.getOrCreateInstance(toast);
+                    toastInstance.show();
+                }
+
+                setTimeout(() => {
+                    window.location.href =
+                        "../giohang/giohang.html";
+                }, 800);
+
             }
 
-            const cartProduct = {
-                ...product,
-                image: mainImage ? mainImage.src : (images[0] || ""),
-                selectedStorage: selectedVariant?.storage || "",
-                price: selectedVariant?.newPrice || product.price || 0,
-                quantity: 1
-            };
-
-            saveProductToCart(cartProduct);
-            window.location.href = "../giohang/giohang.html";
         });
+
     }
+
 }
 
 // KHỞI TẠO ĐỔ DỮ LIỆU VÀ LẮNG NGHE SỰ KIỆN ĐỔI NGÔN NGỮ
