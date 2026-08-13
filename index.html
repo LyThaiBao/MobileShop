@@ -33,13 +33,13 @@
    </div>
     <div class="navbar_swpage d-flex flex-column bold mt-2 text-navy pt-2 gap-3 flex-md-row align-items-center pt-md-0 mt-md-0 fs-md  justify-content-between justify-content-md-center gap-md-5">
         <a href="#" class="d-md-block"><i class="bi px-1 bi-house d-md-none"></i><span  data-lang="nav.home" class="fw-bold"></span></a>
-        <a href="./src/" class="d-flex gap-2" > <i class="bi bi-phone d-md-none"></i><span data-lang="nav.product" class="fw-bold">San Pham</span></a>
+        <a href="./src/SanPham/sanpham.html" class="d-flex gap-2" > <i class="bi bi-phone d-md-none"></i><span data-lang="nav.product" class="fw-bold">San Pham</span></a>
         <a href="./src/GioiThieu/gioithieu.html" class="d-flex gap-2"><i class="bi bi-info-circle d-md-none"></i> <span data-lang="nav.about" class="fw-bold">Giới Thiệu</span></a>
         <a href="./src/LienHe/lienhe.html" class="d-flex gap-2 pr-3"><i class="bi bi-telephone d-md-none"></i> <span data-lang="nav.contact" class="fw-bold">Liên Hệ</span></a>
     </div>
 </nav>
 <div class="header_action d-flex align-items-center gap-3 ms-5 ">
-    <a href="../../src/giohang/giohang.html" class="header_action-cart fs-md "><i class="bi bi-cart4"></i></a>
+    <a href="./src/giohang/giohang.html" class="header_action-cart fs-md "><i class="bi bi-cart4"></i></a>
     <a class="fs-md" id="username"></a>
     <a href="../../src/Dangnhap.html" class="btn btn-danger" data-lang="nav.logout"></a>
     <div id="lang" class="d-flex gap-3">
@@ -47,6 +47,7 @@
         <img src="./public/imgs/country/us.png" alt="us" tabindex="-1" id="btn_us" role="button">
     </div>
 </div>
+<img src="./src/chitiet/chitiet.html" alt="">
 <div id="overlay-placeholder" class="z-99 d-md-none"></div>
      </header>
 
@@ -61,7 +62,7 @@
           </h6>
           <h1 class="text-center" data-lang="home.banner.title">Điện thoại chính hãng, giá tốt</h1>
           <h6 class="text-center" data-lang="home.banner.subtitle">Trả góp 0%, giao hàng toàn quốc</h6>
-          <button class="btn bg-primary-app ms-40 mt-4 px-4 py-3 text-success ex-bold" tabindex="-1" onclick="{console.log(window.location.pathname = '/src/SanPham/sanpham.html')}">
+          <button id="buyNow" class="btn bg-primary-app ms-40 mt-4 px-4 py-3 text-success ex-bold" tabindex="-1">
             <span data-lang="home.banner.buyNow">Mua ngay</span>
           </button>
         </div>

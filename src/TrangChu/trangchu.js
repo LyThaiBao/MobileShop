@@ -337,11 +337,11 @@ function renderProduct(productsList, addToCartCallback, rootId) {
         const columnWrapper = document.createElement('div');
         columnWrapper.classList.add('col-12', 'col-md-6', 'col-lg-3', 'mt-3');
 
-        const productCard = document.createElement('section');
-        productCard.addEventListener("click", () => {
-            localStorage.setItem('currentWatch', JSON.stringify(item));
-            window.location.replace("/src/chitietsp/chittiet.html");
-        });
+       const productCard = document.createElement('section');
+        productCard.addEventListener("click", (e) => {
+        localStorage.setItem('currentWatch', JSON.stringify(item));
+           window.location.href = "src/chitiet/chitiet.html";
+    });
         productCard.classList.add('product_card', 'd-flex', 'flex-column', 'h-100', 'justify-content-between', 'align-items-center');
 
         const containImg = document.createElement('div');
@@ -388,6 +388,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const productsShow = products.slice(7, 11);
     renderProduct(productsShow, addToCart, 'container_products');
 });
+
+document.querySelector("#buyNow").addEventListener('click',()=>{
+    window.location.href = "src/SanPham/sanpham.html"
+})
 
 // Check email footer
  function  checkEmail(){
