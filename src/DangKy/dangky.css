@@ -34,6 +34,14 @@ body {
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.10);
 }
 
+           #logo{
+            max-width: 50%;
+            margin: 0 auto;
+        }
+            #logo img{
+                width: 100%;
+            }
+
 /* Headers */
 .auth-title {
     text-align: center;

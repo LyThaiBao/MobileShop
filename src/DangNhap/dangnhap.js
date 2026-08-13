@@ -169,8 +169,7 @@ function showLoginMessage(message, type) {
 
             setTimeout(function () {
 
-                window.location.href =
-                    "TrangChu.html";
+                window.location.href ="../../index.html";
 
             }, 1000);
 
