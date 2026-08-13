@@ -180,39 +180,63 @@ if (!productData) {
     updatePrice();
 
     // THÊM GIỎ HÀNG
-    const addCart = document.getElementById("addCart");
-    if (addCart) {
-        addCart.addEventListener("click", () => {
-            const toast = document.getElementById("cartToast");
-            const toastBody = document.getElementById("toastBody");
-            const toastHeader = document.getElementById("toastHeader");
-            const from = document.getElementById("from");
+  // THÊM GIỎ HÀNG
+const addCart = document.getElementById("addCart");
+if (addCart) {
+    addCart.addEventListener("click", () => {
+        const toast = document.getElementById("cartToast");
+        const toastBody = document.getElementById("toastBody");
+        const toastHeader = document.getElementById("toastHeader");
+        const from = document.getElementById("from");
 
-            if (!checkLogin()) {
-                if (toastHeader) toastHeader.className = "toast-header bg-danger text-white";
-                if (from) from.innerText = "Thông báo";
-                if (toastBody) toastBody.innerText = "Vui lòng đăng nhập!";
-            } else {
-                if (toastHeader) toastHeader.className = "toast-header bg-info text-white";
-                if (from) from.innerText = "Giỏ hàng";
-
-                const cartProduct = {
-                    ...product,
-                    selectedStorage: selectedVariant?.storage,
-                    price: selectedVariant?.newPrice || product.price,
-                    quantity: 1
-                };
-
-                saveProductToCart(cartProduct);
-                if (toastBody) toastBody.innerText = "Đã thêm sản phẩm vào giỏ hàng!";
+        // 1. Kiểm tra đăng nhập
+        if (!checkLogin()) {
+            if (toastHeader) toastHeader.className = "toast-header bg-danger text-white";
+            if (from) from.innerText = "Thông báo";
+            if (toastBody) toastBody.innerText = "Vui lòng đăng nhập!";
+        } else {
+            // 2. Kiểm tra dữ liệu sản phẩm gốc có tồn tại không
+            if (!product) {
+                alert("Lỗi dữ liệu sản phẩm! Vui lòng thử lại.");
+                return;
             }
 
-            if (toast) {
+            if (toastHeader) toastHeader.className = "toast-header bg-info text-white";
+            if (from) from.innerText = "Giỏ hàng";
+
+            // Lấy ảnh đại diện (ảnh đầu tiên)
+            const mainImgSrc = document.getElementById("mainImage")?.src || 
+                               (product.colors?.[0]?.imgs?.[0]) || "";
+
+            // Tạo object sản phẩm để lưu
+            const cartProduct = {
+                id: product.id,
+                name: product.name,
+                image: mainImgSrc,
+                selectedStorage: selectedVariant?.storage || "Mặc định",
+                selectedColor: product.colors?.[0]?.name?.[getLang()] || "",
+                price: selectedVariant?.newPrice || product.price || 0,
+                quantity: 1
+            };
+
+            // Lưu vào LocalStorage
+            saveProductToCart(cartProduct);
+
+            if (toastBody) toastBody.innerText = "Đã thêm sản phẩm vào giỏ hàng!";
+        }
+
+        // 3. Hiển thị Toast thông báo của Bootstrap
+        if (toast) {
+            try {
                 const toastInstance = bootstrap.Toast.getOrCreateInstance(toast);
                 toastInstance.show();
+            } catch (e) {
+                console.warn("Bootstrap Toast không hoạt động, fallback alert:", e);
+                alert(toastBody ? toastBody.innerText : "Thành công!");
             }
-        });
-    }
+        }
+    });
+}
 
     // MUA NGAY
     const buyNow = document.getElementById("buyNow");
