@@ -108,7 +108,7 @@ const products = [
       { storage: "12GB/512GB", oldPrice: 17670000, newPrice: 12990000 }
     ],
     colors: [
-      { name: { vi: "Đen", us: "Black" }, hex: "#1c1c1e", imgs: ["public/imgs/products/sanpham11/i_1.webp"] },
+      { name: { vi: "Đen", us: "Black" }, hex: "#1c1c1e", imgs: ["./public/imgs/products/sanpham11/i_1.webp"] },
       { name: { vi: "Xanh Titan", us: "Titanium Blue" }, hex: "#3d4f5c", imgs: ["public/imgs/products/sanpham11/i_2.webp"] }
     ]
   },
@@ -367,7 +367,9 @@ function renderProduct(productsList, addToCartCallback, rootId) {
         buyBtn.innerText = currentLangCode === 'vi' ? '+ Thêm giỏ' : '+ Add to Cart';
         buyBtn.addEventListener('click', (e) => {
             e.stopPropagation(); 
-            addToCartCallback(item);
+            // addToCartCallback(item);
+           localStorage.setItem('currentWatch', JSON.stringify(item.id));
+           window.location.href = "src/chitiet/chitiet.html";
         });
 
         containDesc.append(title, price, buyBtn);
