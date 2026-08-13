@@ -316,6 +316,12 @@ function filter(){
     chkPrice.forEach((p)=> p.addEventListener('change', applyFilter));
 }
 
+function saveProductToCart(product) {
+    const currentCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const newCart = [...currentCart, product];
+    localStorage.setItem("cart", JSON.stringify(newCart));
+}
+
 function addToCart(product){
     const toast = new bootstrap.Toast(document.getElementById('cartToast'));
     const comFrom = document.getElementById("from");
@@ -334,7 +340,7 @@ function addToCart(product){
         comFrom.setAttribute('data-lang','toast.cartTitle');
         toastBody.innerText = "Đã thêm sản phẩm vào giỏ hàng!";
         toastBody.setAttribute('data-lang','toast.addSuccess');
-        // saveProductToCart(product);
+        saveProductToCart(product);
     }
     
     // Trước khi gọi show thì mình check lang trước (nếu có hàm loadLang)
