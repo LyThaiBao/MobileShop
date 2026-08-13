@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+
+    <!-- =========================
+         BOOTSTRAP & ICONS
+    ========================== -->
+    <link rel="stylesheet" href="../../lib/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lib/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
+
+    <!-- =========================
+         ROOT CSS & CSS GIỎ HÀNG
+    ========================== -->
+    <link rel="stylesheet" href="../../public/css/root.css">
+    <link rel="stylesheet" href="./dangnhap.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <header id="header" class="d-flex justify-content-between align-items-center bg-primary-app px-2">
+        </header>
+
+        <main class="auth-page">
+
+            <div class="auth-card">
+
+                <h1 class="auth-title">
+                    Đăng nhập
+                </h1>
+
+                <p class="auth-subtitle">
+                    Đăng nhập để tiếp tục mua sắm
+                </p>
+
+                <div id="loginMessage" class="auth-message">
+                </div>
+
+                <div class="mb-3">
+                    <label class="auth-label">
+                        Email hoặc số điện thoại
+                    </label>
+                    <input type="text" id="loginUsername" class="form-control auth-input" placeholder="Nhập email hoặc số điện thoại" autocomplete="username">
+                </div>
+
+                <div class="mb-3">
+                    <label class="auth-label">
+                        Mật khẩu
+                    </label>
+                    <div class="password-box">
+                        <input type="password" id="loginPassword" class="form-control auth-input" placeholder="Nhập mật khẩu" autocomplete="current-password">
+                        <button type="button" class="toggle-password" onclick="togglePassword()">
+                            <i id="loginPasswordIcon" class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="rememberLogin">
+                        <label class="form-check-label" for="rememberLogin">
+                            Ghi nhớ đăng nhập
+                        </label>
+                    </div>
+                    <a href="#" class="text-decoration-none" onclick="forgotPassword(event)">
+                        Quên mật khẩu?
+                    </a>
+                </div>
+
+                <button type="button" class="btn btn-primary auth-btn" onclick="loginAccount()">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    Đăng nhập
+                </button>
+
+                <div class="divider">
+                    hoặc
+                </div>
+
+                <div class="google-area">
+                    <div id="googleLoginButton">
+                    </div>
+                </div>
+
+                <div class="register-link">
+                    Chưa có tài khoản?
+                    <a href="Dangky.html">
+                        Đăng ký ngay
+                    </a>
+                </div>
+
+                <div class="home-link">
+                    <a href="TrangChu.html">
+                        <i class="bi bi-house"></i>
+                        Về trang chủ
+                    </a>
+                </div>
+
+            </div>
+
+        </main>
+
+        <div id="bottom-placeholder" class="">
+        </div>
+
+    </div>
+
+    <!-- Scripts Component -->
+
+     <script src="../../lib/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../public/js/lang.js"></script>
+    <script src="./dangnhap.js"></script>
+    <script src="../../public/js/root.js"></script>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
+</body>
+
+</html>

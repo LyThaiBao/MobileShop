@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+
+    <!-- =========================
+         BOOTSTRAP & ICONS
+    ========================== -->
+    <link rel="stylesheet" href="../../lib/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../lib/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
+
+    <!-- =========================
+         ROOT CSS & CSS GIỎ HÀNG
+    ========================== -->
+    <link rel="stylesheet" href="../../public/css/root.css">
+    <link rel="stylesheet" href="./dangky.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <header id="header" class="d-flex justify-content-between align-items-center bg-primary-app px-2">
+        </header>
+
+        <main class="auth-page">
+
+            <div class="auth-card">
+
+                <h1 class="auth-title">
+                    Tạo tài khoản
+                </h1>
+
+                <p class="auth-subtitle">
+                    Đăng ký để bắt đầu mua sắm
+                </p>
+
+                <div id="registerMessage" class="auth-message">
+                </div>
+
+                <div class="mb-3">
+                    <label class="auth-label">
+                        Họ và tên
+                    </label>
+                    <input type="text" id="registerName" class="form-control auth-input" placeholder="Nhập họ và tên">
+                </div>
+
+                <div class="mb-3">
+                    <label class="auth-label">
+                        Số điện thoại
+                    </label>
+                    <input type="tel" id="registerPhone" class="form-control auth-input" placeholder="Nhập số điện thoại">
+                </div>
+
+                <div class="mb-3">
+                    <label class="auth-label">
+                        Email
+                    </label>
+                    <input type="email" id="registerEmail" class="form-control auth-input" placeholder="Nhập email">
+                </div>
+
+                <div class="mb-3">
+                    <label class="auth-label">
+                        Mật khẩu
+                    </label>
+                    <div class="password-box">
+                        <input type="password" id="registerPassword" class="form-control auth-input" placeholder="Ít nhất 6 ký tự">
+                        <button type="button" class="toggle-password" onclick="togglePassword('registerPassword', 'registerPasswordIcon')">
+                            <i id="registerPasswordIcon" class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="auth-label">
+                        Xác nhận mật khẩu
+                    </label>
+                    <div class="password-box">
+                        <input type="password" id="registerConfirmPassword" class="form-control auth-input" placeholder="Nhập lại mật khẩu">
+                        <button type="button" class="toggle-password" onclick="togglePassword('registerConfirmPassword', 'registerConfirmPasswordIcon')">
+                            <i id="registerConfirmPasswordIcon" class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="agreeTerms">
+                    <label class="form-check-label" for="agreeTerms">
+                        Tôi đồng ý với điều khoản sử dụng
+                    </label>
+                </div>
+
+                <button type="button" class="btn btn-primary auth-btn" onclick="registerAccount()">
+                    <i class="bi bi-person-plus"></i>
+                    Tạo tài khoản
+                </button>
+
+                <div class="divider">
+                    hoặc
+                </div>
+
+                <div class="google-area">
+                    <div id="googleRegisterButton">
+                    </div>
+                </div>
+
+                <div class="login-link">
+                    Đã có tài khoản?
+                    <a href="Dangnhap.html">
+                        Đăng nhập
+                    </a>
+                </div>
+
+                <div class="home-link">
+                    <a href="TrangChu.html">
+                        <i class="bi bi-house"></i>
+                        Về trang chủ
+                    </a>
+                </div>
+
+            </div>
+
+        </main>
+
+        <div id="bottom-placeholder" class="">
+        </div>
+
+    </div>
+
+    <!-- Scripts Component -->
+
+       <script src="../../lib/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../public/js/lang.js"></script>
+    <script src="./dangky.js"></script>
+    <script src="../../public/js/root.js"></script>
+
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+</body>
+
+</html>
