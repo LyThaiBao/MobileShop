@@ -1,0 +1,77 @@
+#banner{
+  background: url("../../public/imgs/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contain_img{
+  background: url("../../public/imgs/mobile_shop_logo_full.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 25px;
+}
+
+.category-card {
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+}
+
+.category-card i,
+.category-card span {
+  color: #fff;
+}
+
+.category_icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Mỗi category một tông màu riêng để dễ phân biệt */
+.card-iphone {
+  background: linear-gradient(145deg, #34d399, #10b981);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+.card-iphone:hover { box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35); }
+
+.card-android {
+  background: linear-gradient(145deg, #4ade80, #16a34a);
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.25);
+}
+.card-android:hover { box-shadow: 0 8px 20px rgba(22, 163, 74, 0.35); }
+
+.card-accessory {
+  background: linear-gradient(145deg, #38bdf8, #0284c7);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+}
+.card-accessory:hover { box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35); }
+
+.card-promo {
+  background: linear-gradient(145deg, #fb923c, #ea580c);
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+}
+.card-promo:hover { box-shadow: 0 8px 20px rgba(234, 88, 12, 0.35); }
+
+/*  */
+
+
+.containDesc{
+  text-align: center;
+}
+
+#about{
+  background: var(--gradient-primary);
+}
+
+#box_email{
+  border-radius: 5px;
+  outline: none;
+}

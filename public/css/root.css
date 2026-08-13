@@ -52,7 +52,42 @@ ul{
 li{
     list-style: none;
 }
+/* ------------Header-------------- */
+#header_logo{
+    flex-basis: 42%;
+    max-height: 60px;
+}
 
+#header_logo img{
+    border-radius: 15%;
+    width: 50%;
+    height: 50px;
+}
+
+@media (min-width:768px){
+    #header_logo{
+        flex-basis: 10%;
+        max-height: 60px;
+    }
+}
+
+@media (min-width:800px){
+    #header_logo{
+        flex-basis: 20%;
+        max-height: 60px;
+    }
+}
+
+@media (min-width:1000px){
+    #header_logo{
+        flex-basis: 10%;
+        max-height: 60px;
+    }
+}
+
+.wrapper{
+  overflow: hidden;
+}
 #header{
     position: fixed;
     top: 0;
