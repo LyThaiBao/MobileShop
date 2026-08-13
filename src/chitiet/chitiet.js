@@ -563,10 +563,10 @@ function renderProductDetail() {
                     toastInstance.show();
                 }
 
-                setTimeout(() => {
+             
                     window.location.href =
                         "../giohang/giohang.html";
-                }, 800);
+    
 
             }
 
