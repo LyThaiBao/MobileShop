@@ -1,8 +1,6 @@
-/* =========================================================
-   GIAO DIỆN SÁNG (LIGHT MODE) TƯƠNG THÍCH VỚI ROOT.CSS
-   ========================================================= */
 
-/* 1. Nền trang sáng & chữ tối */
+
+/*  Nền trang sáng & chữ tối */
 body {
     background-color: #f8fafc;
     color: #16213a;
@@ -13,7 +11,6 @@ main {
     margin-top: 80px; 
 }
 
-/* Ghi đè các class text-light của Bootstrap trong HTML sang màu tối */
 main .text-light {
     color: #16213a !important;
 }
@@ -32,7 +29,7 @@ main .text-secondary {
     font-weight: 600;
 }
 
-/* --- BANNER CHÍNH --- */
+/* --- BANNER CHÍNH */
 .intro-banner {
     background-color: #ffffff;
     border: 1px solid rgba(37, 235, 153, 0.25); 

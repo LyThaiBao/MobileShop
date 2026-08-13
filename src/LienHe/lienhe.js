@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // 1. Logic xử lý Form Liên Hệ
+
     function validateAndSubmitContact() {
         const contactForm = document.getElementById("contactForm");
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 2. Logic xử lý Đăng ký nhận ưu đãi ở Footer
+    // Đăng ký nhận ưu đãi ở Footer
     function handleFooterSignup() {
         const triggerBtn = document.getElementById("trigger");
         const boxEmail = document.getElementById("box_email");
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (emailError) emailError.textContent = "";
 
-            // Hiển thị Modal Bootstrap
+            // Modal Bootstrap
             if (notifyModalEl && window.bootstrap) {
                 const modal = new bootstrap.Modal(notifyModalEl);
                 modal.show();
