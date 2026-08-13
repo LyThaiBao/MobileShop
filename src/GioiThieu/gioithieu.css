@@ -1,0 +1,124 @@
+/* =========================================================
+   GIAO DIỆN SÁNG (LIGHT MODE) TƯƠNG THÍCH VỚI ROOT.CSS
+   ========================================================= */
+
+/* 1. Nền trang sáng & chữ tối */
+body {
+    background-color: #f8fafc;
+    color: #16213a;
+    margin: 0;
+}
+
+main {
+    margin-top: 80px; 
+}
+
+/* Ghi đè các class text-light của Bootstrap trong HTML sang màu tối */
+main .text-light {
+    color: #16213a !important;
+}
+
+main .text-secondary {
+    color: #64748b !important;
+}
+
+/* Breadcrumb */
+.breadcrumb-item a {
+    color: #64748b !important;
+}
+
+.breadcrumb-item.text-light {
+    color: #0f172a !important;
+    font-weight: 600;
+}
+
+/* --- BANNER CHÍNH --- */
+.intro-banner {
+    background-color: #ffffff;
+    border: 1px solid rgba(37, 235, 153, 0.25); 
+    box-shadow: 0 4px 20px rgba(37, 235, 153, 0.12);
+}
+
+.text-success-app {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.main-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    color: #16213a;
+}
+
+/* --- KHỐI THỐNG KÊ --- */
+.stat-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(37, 235, 153, 0.2); 
+    box-shadow: 0 4px 15px rgba(37, 235, 153, 0.08);
+    transition: transform 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- KHỐI GIÁ TRỊ CỐT LÕI --- */
+.value-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(37, 235, 153, 0.2);
+    box-shadow: 0 4px 15px rgba(37, 235, 153, 0.08);
+    transition: transform 0.25s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-4px);
+}
+
+.value-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(37, 235, 153, 0.15); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.value-icon i {
+    color: #059669 !important;
+}
+
+/* --- KHỐI LIÊN HỆ --- */
+.cta-section {
+    background-color: #ffffff;
+    border: 1px solid rgba(37, 235, 153, 0.25);
+    box-shadow: 0 4px 20px rgba(37, 235, 153, 0.12);
+}
+
+.btn-cta {
+    background: var(--gradient-primary);
+    color: #16213a !important; 
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+}
+
+h1, h2, h3, h4, h5, h6, .main-title {
+    font-family: 'Space Grotesk', sans-serif;
+}

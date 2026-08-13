@@ -1,0 +1,173 @@
+
+/* 1. Nền trang sáng & chữ tối */
+body {
+    background-color: #f8fafc; 
+    color: #16213a;
+    margin: 0;
+}
+
+
+main {
+    margin-top: 120px; 
+    padding-bottom: 80px; 
+}
+
+@media (min-width: 768px) {
+    main {
+        margin-top: 80px; 
+        padding-bottom: 0;
+    }
+}
+
+/* Ghi đè các class chữ sáng của Bootstrap trong HTML sang màu tối */
+main .text-light,
+main .text-white,
+main h3.text-white {
+    color: #16213a !important;
+}
+
+main .text-white-50,
+main .text-secondary {
+    color: #64748b !important;
+}
+
+/* --- Breadcrumb --- */
+.breadcrumb-item a {
+    color: #64748b !important;
+}
+
+.breadcrumb-item.text-light {
+    color: #0f172a !important;
+    font-weight: 600;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: #94a3b8;
+}
+
+/* --- Định dạng chữ --- */
+.label-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.body-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+}
+
+.mono-text {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: 0.95rem;
+    color: #16213a;
+}
+
+.text-success-app {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* --- Khối Thông Tin Liên Hệ --- */
+.contact-info-wrap {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(37, 235, 153, 0.2);
+    box-shadow: 0 4px 15px rgba(37, 235, 153, 0.08);
+}
+
+.value-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(37, 235, 153, 0.15); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.value-icon i {
+    color: #059669 !important;
+}
+
+/* --- Khối Bản Đồ --- */
+.map-placeholder {
+    border: 1px solid rgba(37, 235, 153, 0.2);
+    box-shadow: 0 4px 15px rgba(37, 235, 153, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.map-placeholder img {
+    display: block;
+    max-height: 240px;
+}
+
+.map-placeholder:hover {
+    transform: translateY(-2px);
+}
+
+/* --- Khối Form Nhập Liệu --- */
+.value-card {
+    background-color: #ffffff;
+    border: 1px solid rgba(37, 235, 153, 0.2);
+    box-shadow: 0 4px 15px rgba(37, 235, 153, 0.08);
+}
+
+.form-control {
+    background-color: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #16213a !important;
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #25eb99 !important;
+    box-shadow: 0 0 0 3px rgba(37, 235, 153, 0.2) !important;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* --- Nút Bấm --- */
+.btn-cta {
+    background: var(--gradient-primary); 
+    color: #16213a !important;
+    border: none;
+    border-radius: 12px; 
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.btn-cta:hover {
+    background: #1fca82;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 235, 153, 0.25);
+}
+
+.btn-cta:active {
+    transform: translateY(0);
+}
+
+/* Xử lý Autofill trình duyệt giữ nguyên nền trắng */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #16213a !important;
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}

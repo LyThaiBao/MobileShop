@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liên Hệ</title>
+    <title>Giới Thiệu</title>
     <link rel="shortcut icon" href="../../public/imgs/favicon_io/favicon-32x32.png" type="image/x-icon">
     <!-- bootstrap -->
     <link rel="stylesheet" href="../../lib/bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <!-- root css -->
     <link rel="stylesheet" href="../../public/css/root.css">
-    <!-- lienhe css -->
-    <link rel="stylesheet" href="./lienhe.css">
+    <!-- gioithieu css -->
+    <link rel="stylesheet" href="./gioithieu.css">
     <!-- icon -->
     <link rel="stylesheet" href="../../lib/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../components/header/Header.css">
     <!-- bootstrap js -->
     <script src="../../lib/bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
 </head>
@@ -27,97 +28,97 @@
             <nav class="header-nav d-none d-md-flex gap-3">
                 <a href="../../index.html" class="text-white text-decoration-none" data-lang="nav.home">Trang Chủ</a>
                 <a href="../SanPham/sanpham.html" class="text-white text-decoration-none" data-lang="nav.product">Sản Phẩm</a>
-                <a href="../GioiThieu/gioithieu.html" class="text-white text-decoration-none" data-lang="nav.about">Giới Thiệu</a>
-                <a href="./lienhe.html" class="text-white text-decoration-none" data-lang="nav.contact">Liên Hệ</a>
+                <a href="./gioithieu.html" class="text-white text-decoration-none" data-lang="nav.about">Giới Thiệu</a>
+                <a href="../LienHe/lienhe.html" class="text-white text-decoration-none" data-lang="nav.contact">Liên Hệ</a>
             </nav>
             <div class="header-actions">
                 <a href="../DangNhap/dangnhap.html" class="btn btn-light btn-sm" data-lang="action.login">Đăng Nhập</a>
             </div>
         </header>
-        
+
         <!-- NỘI DUNG CHÍNH (MAIN) -->
         <main class="container">
-            <div class="row g-4">
-                <!-- Khối Thông Tin Liên Hệ & Bản Đồ -->
-                <div class="col-12 col-md-5">
-                    <div class="contact-info-wrap h-100 d-flex flex-column justify-content-between">
-                        <div>
-                            <h2 class="main-title text-success-app mb-3" data-lang="contact.info.title">Liên hệ với chúng tôi</h2>
-                            <p class="text-white-50 mb-4 body-text" data-lang="contact.info.desc">
-                                Có thắc mắc về sản phẩm, đơn hàng hay bảo hành? Gửi thông tin cho chúng tôi hoặc ghé trực tiếp cửa hàng gần nhất.
-                            </p>
+            <!-- Khối giới thiệu chính -->
+            <section class="intro-banner text-center p-5 mb-5 rounded-4">
+                <span class="sub-title text-uppercase fw-bold text-success-app" data-lang="intro.banner.subTitle">TỪ 2016 - HƠN 128.000 KHÁCH HÀNG TIN DÙNG</span>
+                <h1 class="main-title my-3 text-light fw-bold" data-lang="intro.banner.title">Chúng tôi mang điện thoại chính hãng<br>đến gần hơn với mọi người</h1>
+                <p class="mx-auto text-secondary" style="max-width: 600px;" data-lang="intro.banner.desc">
+                    Bắt đầu từ một cửa hàng nhỏ, đến nay chúng tôi đã phục vụ khách hàng tại 40+ tỉnh thành, với cam kết hàng chính hãng, giá minh bạch và hậu mãi tận tâm.
+                </p>
+            </section>
 
-                            <!-- Khối Thông tin chi tiết -->
-                            <div class="d-flex flex-column gap-3 mb-4">
-                                <div class="d-flex align-items-start gap-3">
-                                    <div class="value-icon flex-shrink-0"><i class="bi bi-geo-alt"></i></div>
-                                    <div>
-                                        <small class="text-secondary d-block label-title" data-lang="contact.info.addressLabel">ĐỊA CHỈ</small>
-                                        <span class="mono-text fw-medium" data-lang="contact.info.address">123 Đường ABC, Quận 1, TP. Cần Thơ</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-start gap-3">
-                                    <div class="value-icon flex-shrink-0"><i class="bi bi-telephone"></i></div>
-                                    <div>
-                                        <small class="text-secondary d-block label-title" data-lang="contact.info.hotlineLabel">HOTLINE</small>
-                                        <span class="mono-text fw-bold text-success-app" data-lang="contact.info.hotline">1900 6868</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-start gap-3">
-                                    <div class="value-icon flex-shrink-0"><i class="bi bi-envelope"></i></div>
-                                    <div>
-                                        <small class="text-secondary d-block label-title">EMAIL</small>
-                                        <span class="mono-text">hotro@phonestore.vn</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-start gap-3">
-                                    <div class="value-icon flex-shrink-0"><i class="bi bi-clock"></i></div>
-                                    <div>
-                                        <small class="text-secondary d-block label-title" data-lang="contact.info.hoursLabel">GIỜ LÀM VIỆC</small>
-                                        <span class="mono-text" data-lang="contact.info.hours">8:00 – 21:00, tất cả các ngày trong tuần</span>
-                                    </div>
-                                </div>
+            <!-- Khối Thống kê số liệu -->
+            <section class="row g-3 text-center mb-5">
+                <div class="col-6 col-md-3">
+                    <div class="stat-card p-4 rounded-3">
+                        <h2 class="stat-number fw-bold">2016</h2>
+                        <p class="text-secondary m-0" data-lang="intro.stats.yearLabel">Năm thành lập</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card p-4 rounded-3">
+                        <h2 class="stat-number fw-bold">128k+</h2>
+                        <p class="text-secondary m-0" data-lang="intro.stats.customerLabel">Khách hàng</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card p-4 rounded-3">
+                        <h2 class="stat-number fw-bold">40+</h2>
+                        <p class="text-secondary m-0" data-lang="intro.stats.storeLabel">Cửa hàng toàn quốc</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-card p-4 rounded-3">
+                        <h2 class="stat-number fw-bold">4.8/5</h2>
+                        <p class="text-secondary m-0" data-lang="intro.stats.ratingLabel">Đánh giá trung bình</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Khối Giá trị cốt lõi -->
+            <section class="mb-5">
+                <h3 class="text-light mb-4 fw-bold" data-lang="intro.values.title">Giá Trị Cốt Lõi</h3>
+                <div class="row g-4">
+                    <div class="col-12 col-md-4">
+                        <div class="value-card p-4 rounded-3">
+                            <div class="value-icon mb-3">
+                                <i class="bi bi-shield-check fs-3"></i>
                             </div>
+                            <h4 class="text-light fw-bold fs-5" data-lang="intro.values.genuine.title">Chính hãng 100%</h4>
+                            <p class="text-secondary m-0 mt-2" data-lang="intro.values.genuine.desc">Tất cả sản phẩm đều có tem chính hãng, bảo hành đầy đủ từ nhà sản xuất.</p>
                         </div>
-
-                        <!-- Khối bản đồ -->
-                        <div class="map-placeholder rounded-4 overflow-hidden mt-3 mt-md-0">
-                            <img src="../../public/imgs/lienhe/lh1.jpg" alt="Bản đồ cửa hàng Mobile Shop" class="img-fluid w-100 h-100 object-fit-cover">
+                    </div>
+            
+                    <div class="col-12 col-md-4">
+                        <div class="value-card p-4 rounded-3">
+                            <div class="value-icon mb-3">
+                                <i class="bi bi-arrow-repeat fs-3"></i>
+                            </div>
+                            <h4 class="text-light fw-bold fs-5" data-lang="intro.values.transparent.title">Minh bạch giá</h4>
+                            <p class="text-secondary m-0 mt-2" data-lang="intro.values.transparent.desc">Giá niêm yết rõ ràng, không phát sinh chi phí ẩn khi thanh toán.</p>
+                        </div>
+                    </div>
+                  
+                    <div class="col-12 col-md-4">
+                        <div class="value-card p-4 rounded-3">
+                            <div class="value-icon mb-3">
+                                <i class="bi bi-headset fs-3"></i>
+                            </div>
+                            <h4 class="text-light fw-bold fs-5" data-lang="intro.values.support.title">Hậu mãi tận tâm</h4>
+                            <p class="text-secondary m-0 mt-2" data-lang="intro.values.support.desc">Đội ngũ hỗ trợ 24/7, sẵn sàng đồng hành cùng khách hàng sau khi mua.</p>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Form gửi tin nhắn -->
-                <div class="col-12 col-md-7">
-                    <div class="value-card p-4 p-md-5 rounded-4">
-                        <h3 class="h4 mb-4 text-white" data-lang="contact.form.title">Gửi tin nhắn cho chúng tôi</h3>
-                        <form id="contactForm" novalidate>
-                            <div class="mb-3">
-                                <label for="fullName" class="form-label label-title text-secondary" data-lang="contact.form.fullNameLabel">HỌ VÀ TÊN</label>
-                                <input type="text" class="form-control" id="fullName" placeholder="Nguyen Van A" required>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="phoneNumber" class="form-label label-title text-secondary" data-lang="contact.form.phoneLabel">SỐ ĐIỆN THOẠI</label>
-                                    <input type="tel" class="form-control mono-text" id="phoneNumber" placeholder="0123456789" required>
-                                </div>
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="email" class="form-label label-title text-secondary">EMAIL</label>
-                                    <input type="email" class="form-control" id="email" placeholder="ct188@gmail.com" required>
-                                </div>
-                            </div>
-
-                            <div class="mb-4">
-                                <label for="message" class="form-label label-title text-secondary" data-lang="contact.form.messageLabel">NỘI DUNG</label>
-                                <textarea class="form-control" id="message" rows="4" placeholder="........................................................" required></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-cta w-100 py-3 fw-bold" data-lang="contact.form.submit">Gửi liên hệ</button>
-                        </form>
-                    </div>
+            <!-- Khối Liên hệ ngay -->
+            <section class="cta-section d-flex justify-content-between align-items-center p-4 rounded-3 mb-5">
+                <div>
+                    <h4 class="text-light fw-bold m-0 fs-5" data-lang="intro.cta.title">Bạn cần tư vấn thêm?</h4>
+                    <p class="text-secondary m-0 small" data-lang="intro.cta.desc">Đội ngũ của chúng tôi luôn sẵn sàng lắng nghe.</p>
                 </div>
-            </div>
+                <a href="../LienHe/lienhe.html" class="btn btn-cta px-4 py-2 fw-bold" data-lang="intro.cta.button">Liên hệ ngay</a>
+            </section>
         </main>
 
         <!-- FOOTER VIẾT CỨNG -->
@@ -217,8 +218,6 @@
         </div>
     </div>
 
-    <!-- SCRIPT TỪ THƯ MỤC ROOT VÀ CÙNG THƯ MỤC -->
     <script src="../../utils/lang.js"></script>
-    <script src="./lienhe.js"></script>
 </body>
 </html>
