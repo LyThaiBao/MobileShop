@@ -252,8 +252,7 @@ function showRegisterMessage(message, type) {
 
             setTimeout(function () {
 
-                window.location.href =
-                    "Dangnhap.html";
+                window.location.href ="../DangNhap/dangnhap.html";
 
             }, 1200);
 
