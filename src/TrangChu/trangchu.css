@@ -35,7 +35,7 @@
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* Mỗi category một tông màu riêng để dễ phân biệt */
+
 .card-iphone {
   background: linear-gradient(145deg, #34d399, #10b981);
   box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
@@ -60,7 +60,6 @@
 }
 .card-promo:hover { box-shadow: 0 8px 20px rgba(234, 88, 12, 0.35); }
 
-/*  */
 
 
 .containDesc{
