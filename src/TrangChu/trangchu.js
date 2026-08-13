@@ -389,7 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProduct(productsShow, addToCart, 'container_products');
 });
 
-
+// Check email footer
  function  checkEmail(){
     const modal = new bootstrap.Modal(document.getElementById('notifyModal'));
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
