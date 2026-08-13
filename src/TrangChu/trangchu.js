@@ -423,7 +423,6 @@ function checkLogin() {
 }
 
 
-// import {} from "../../"
 function showUsername(){
     const username = document.getElementById("username");
     const usr = checkLogin();
