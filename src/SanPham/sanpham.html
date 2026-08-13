@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản Phẩm</title>
+    <link rel="shortcut icon" href="../../public/imgs/favicon_io/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../lib/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/root.css">
+    <link rel="stylesheet" href="../../lib/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./sanpham.css">
+    <link rel="stylesheet" href="../../components/header/Header.css">
+    <script src="../../lib/bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+
+</head>
+     <body>
+     <div class="wrapper overflow-hidden">
+
+          <header id="header" class="d-flex justify-content-between align-items-center bg-primary-app p-2"></header>
+
+          <main id="main" class="px-3">
+          <div class="row">
+
+               <div class="toast-container position-fixed top-0 end-0 p-3">
+                    <!-- Toast của bootstrap dung de thong bao -->
+                    <div id="cartToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                         <div id="toastHeader">
+                              <strong class="me-auto" id="from"></strong>
+                              <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                         </div>
+                         <div class="toast-body" id="toastBody"></div>
+                    </div>
+               </div>
+
+               <!-- data-bs-toggle="offcanvas" và data-bs-target="#filterOffcanvas" ản hiện phần tử có id filterOffcanvas -->
+               <button class="btn btn-info d-xl-none mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" data-lang="product.filter.title">
+               Bộ lọc
+               </button>
+          <!-- offcanvas-lg class của bootstrap, khi duoi lg sẽ hien duoi dang panel ẩn hiện có overlay -->
+          <!-- offcanvas-start trược vào từ bên trái -->
+          <!-- style="--bs-offcanvas-width: 80vw;" áp dụng kích thước với phần tử có offcanvas-lg  -->
+               <div class="offcanvas-xl offcanvas-start col-xl-3 px-3" tabindex="-1" id="filterOffcanvas" style="--bs-offcanvas-width: 50vw;">
+                    <div class="offcanvas-header d-xl-none">
+                         <h5 class="offcanvas-title" data-lang="product.filter.title">Bộ lọc</h5>
+                         <button type="button" class="btn-close" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas"></button>
+                    </div>
+                    <div class="">
+                         <form action="" id="filter_form">
+                              <fieldset class="d-flex flex-column">
+                                   <legend class="mb-0 pt-5" data-lang="product.filter.brand">Hãng</legend>
+                                   <label class="brand-check">Apple
+                                        <input type="checkbox" value="Apple" name="hang">
+                                        <span class="checkmark"></span>
+                                   </label>
+                                   <label class="brand-check">Samsung
+                                        <input type="checkbox" value="Samsung" name="hang">
+                                        <span class="checkmark"></span>
+                                   </label>
+                                   <label class="brand-check">OPPO
+                                        <input type="checkbox" value="OPPO" name="hang">
+                                        <span class="checkmark"></span>
+                                   </label>
+                                   <label class="brand-check">Xiaomi
+                                        <input type="checkbox" value="Xiaomi" name="hang">
+                                        <span class="checkmark"></span>
+                                   </label>
+                                   <label class="brand-check">Nubia
+                                        <input type="checkbox" value="Nubia" name="hang">
+                                        <span class="checkmark"></span>
+                                   </label>
+                                   <label class="brand-check">HONOR
+                                        <input type="checkbox" value="HONOR" name="hang">
+                                        <span class="checkmark"></span>
+                                   </label>
+                              </fieldset>
+                              <fieldset class="mt-4">
+                                   <legend class="mb-0" data-lang="product.filter.price">Giá</legend>
+                                   <label class="brand-check">
+                                       <span data-lang="product.filter.priceUnder10"></span>
+                                        <input type="radio" value="0-10000000" name="gia">
+                                        <span class="radiomark"></span>
+                                   </label>
+                                   <label class="brand-check">
+                                          <span data-lang="product.filter.price10to20"></span>
+                                        <input type="radio" value="10000000-20000000" name="gia">
+                                        <span class="radiomark"></span>
+                                   </label>
+                                   <label class="brand-check">
+                                        <span data-lang="product.filter.price20to30"></span>
+                                        <input type="radio" value="20000000-30000000" name="gia">
+                                        <span class="radiomark"></span>
+                                   </label>
+                                   <label class="brand-check">
+                                        <span data-lang="product.filter.price30to45"></span>
+                                        <input type="radio" value="30000000-45000000" name="gia">
+                                        <span class="radiomark"></span>
+                                   </label>
+                                   <label class="brand-check">
+                                        <span data-lang="product.filter.priceOver45"></span>
+                                        <input type="radio" value="45000000-999999999" name="gia">
+                                        <span class="radiomark"></span>
+                                   </label>
+                              </fieldset>
+                         </form>
+                    </div>
+               </div>
+
+     <div id="container_products" class="px-3 col-xl-9">
+     </div>
+
+          </div>
+
+          
+          </main>
+          
+          <footer class="px-3" id="footer">
+          
+          </footer>
+          <div id="bottom-placeholder" class=""></div>
+     </div>     
+
+     </body>
+<script src="../../components/footer/loadFooter.js" type="module"></script>
+<script src="../../components/header/loadHeader.js" type="module"></script>
+<script src="../../components/bottom_mobile/loadBottomMobile.js" type="module"></script>
+<script src="./sanpham.js" type="module"></script>
+<script type="module" src="../../utils/lang.js"></script>
+
+</html>
