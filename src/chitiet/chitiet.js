@@ -645,17 +645,11 @@ function renderProductDetail() {
                     toastBody.setAttribute('data-lang', 'detail.toast.msg');
                 }
 
-                // Show toast trước khi chuyển trang
-                if (toast) {
-                    const toastInstance =
-                        bootstrap.Toast.getOrCreateInstance(toast);
-                    toastInstance.show();
-                }
 
-                setTimeout(() => {
+             
                     window.location.href =
                         "../giohang/giohang.html";
-                }, 800);
+    
 
             }
 
